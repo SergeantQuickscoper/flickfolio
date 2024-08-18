@@ -8,6 +8,18 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  max-height: none;
+  
+}
+
 
 @layer utilities {
   .text-balance {
