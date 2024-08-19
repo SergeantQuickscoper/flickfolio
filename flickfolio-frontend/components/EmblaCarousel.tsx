@@ -9,7 +9,7 @@ export function EmblaCarousel(props:any) {
 
   return (
     <div className="embla" ref={emblaRef}>
-      <div className="embla__container min-h-screen ">
+      <div className="embla__container min-h-screen">
         <img src='5.jpg' className='embla__slide object-cover' />
         <img src='2.jpg' className='embla__slide object-cover'/>
         <img src='3.jpg' className='embla__slide object-cover'/>
