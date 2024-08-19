@@ -12,7 +12,7 @@ export default function Home() {
           <div className="pt-8 pl-12">
             <Logo/>
           </div>
-          <div className="text-white flex flex-col justify-center items-center pt-24 h-full align-middle">
+          <div className="text-white flex flex-col justify-center items-center pt-24 h-full absolute top-1/2 max-h-full">
             <h1 className="text-6xl">Your Movie Lists, Your Way.</h1>
             <h2>Curate Your Perfect Movie Lists, Share Your Favorites, and Discover New Must-Sees</h2>
           </div>
