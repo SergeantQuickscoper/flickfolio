@@ -1,8 +1,8 @@
 const Logo = () => {
     return(
-        <div className="flex flex-row">
-            <img src="LogoIcon.svg"/>
-            <img src="Flickfolio.svg" className="ml-5"/>
+        <div className="flex flex-row w-72">
+            <img className='ml-5' src="LogoIcon.svg"/>
+            
         </div>
     )
 }
