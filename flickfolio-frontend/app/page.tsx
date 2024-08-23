@@ -3,12 +3,17 @@ import { EmblaCarousel } from "@/components/EmblaCarousel";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button"
 
-export default function Home() {
-  return (
+export default async function Home() {
+  let slideshowArray:any = []
+  await fetch('http://localhost:8080/images/nowplaying')
+  .then((res) => res.json())
+  .then((data) => slideshowArray = data)
+  return await (
+    // TODO make responsive on zoom
     <main className="">
       <div className="max-h-screen relative h-screen object-none">
         <div className="-z-100 absolute top-0 left-0 object-none max-h-screen h-screen">
-          <EmblaCarousel className="object-none" />
+          <EmblaCarousel className="object-none" imgArray={slideshowArray}/>
         </div>
         <div className="z-100 relative max-h-full h-full flex flex-col">
           <div className="pt-8 pl-12">
