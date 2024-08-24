@@ -20,7 +20,7 @@ app.get("/images/nowplaying", async(req, res) => {
         for(i of data.results){
             imageUrls.push(tmdbImageURL + i.backdrop_path)
         }
-        console.log(imageUrls)
+        console.log("Request recieved on /images/nowplaying")
     })
     .catch(err => console.error('error:' + err));
     await console.log(imageUrls)

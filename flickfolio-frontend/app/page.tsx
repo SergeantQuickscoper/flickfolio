@@ -2,6 +2,9 @@ import Image from "next/image";
 import { EmblaCarousel } from "@/components/EmblaCarousel";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button"
+import Footer from "@/components/Footer";
+import { redirect } from 'next/navigation'
+import Link from "next/link";
 
 export default async function Home() {
   let slideshowArray:any = []
@@ -23,7 +26,10 @@ export default async function Home() {
             <div className="absolute flex flex-col items-center top-1/4 left-0 right-0">
                 <h1 className="text-6xl font-bold">Your Movie Lists, Your Way.</h1>
                 <h2 className="text-xl font-extralight mt-5">Curate Your Perfect Movie Lists, Share Your Favorites, and Discover New Must-Sees</h2>
-                <Button className="mt-36 bg-secondaryBackground rounded-full px-10 py-9"><p className="text-2xl">Get Started</p></Button>
+                <Link href="/toprated">
+                    <Button className="mt-36 bg-secondaryBackground rounded-full px-10 py-9"><p className="text-2xl">Get Started</p></Button>
+                </Link>
+                
             </div>
             
             
@@ -68,44 +74,7 @@ export default async function Home() {
             <img src="2.jpg" className="w-[850px] ml-28 rounded-3xl"/>
         </div>
       </div>
-      <div className="h-96 bg-secondaryBackground relative z-100 ">
-        <div className="flex flex-row justify-center h-full w-full pt-16">
-          <div>
-              <h1 className="text-xl text-white font-bold">A website by Don Chacko</h1>
-              <div className="flex flex-row mt-2">
-                  <img src="Instagram.svg"/>
-                  <img src="GitHub.svg" className="px-4"/>
-                  <img src="Linkedin.svg"/>
-              </div>
-
-          </div>
-          <div className="w-[1px] bg-white h-72 mx-48">
-
-          </div>
-          <div>
-              <h1 className="text-xl text-white font-bold">Movies</h1>
-              <div className=" font-light pt-4 text-white">
-                  <h2 className="py-4">Top Rated</h2>
-                  <h2 className="py-4">Trending</h2>
-                  <h2 className="py-4">In Theaters</h2>
-                  <h2 className="py-4">Movie Search</h2>
-              </div>
-          </div>
-          <div className="w-[1px] bg-white h-72 mx-48">
-
-          </div>
-          <div>
-              <h1 className="text-xl text-white font-bold">Social</h1>
-              <div className=" font-light pt-4 text-white">
-                  <h2 className="py-4">Top Rated</h2>
-                  <h2 className="py-4">Trending</h2>
-                  <h2 className="py-4">In Theaters</h2>
-                  <h2 className="py-4">Movie Search</h2>
-              </div>
-          </div>
-        </div>
-        
-      </div>
+      <Footer />
       
     </main>
   );
