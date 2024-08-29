@@ -19,7 +19,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         {...props}
       />
-      <img src="SearchIcon.svg"></img>
+      <button>
+        
+        <img src="SearchIcon.svg"></img>
+      </button>
+      
       </div>
     )
   }

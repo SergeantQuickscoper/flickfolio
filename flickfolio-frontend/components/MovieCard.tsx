@@ -1,21 +1,23 @@
-const MovieCard = () => {
+const MovieCard = (props:any) => {
     return(
-        <section className="inline-block text-white w-fit mx-10 py-12 max-w-[234px]">
-            <div>
-                <img src="Poster.png"/>
+        <section className="inline-block text-white w-fit mx-10 py-4 max-w-[234px]">
+
+            <div className="pb-3">
+                <img src= {props.poster}/>
             </div>
-            <div>
-                <h1 className=" text-lg font-bold">The Shawshank Redemption</h1>
-            </div>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between pb-1">
                 <div>
-                    <h2 className="font-light">1994-09-23</h2>
+                    <h2 className="font-light">{props.date}</h2>
                     
                 </div>
                 <div>
-                    <h2 className="font-light">Rating 8.702</h2>
+                    <h2 className="font-light">Rating {props.rating}</h2>
                 </div>
             </div>
+            <div className="h-[54px]">
+                <h1 className="text-lg font-bold h-full">{props.name}</h1>
+            </div>
+            
         </section>
     )
 }

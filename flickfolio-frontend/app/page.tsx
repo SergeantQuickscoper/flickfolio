@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default async function Home() {
   let slideshowArray:any = []
-  await fetch('http://localhost:8080/images/nowplaying')
+  await fetch('http://localhost:8080/images/nowplaying', { cache: 'no-store' })
   .then((res) => res.json())
   .then((data) => slideshowArray = data)
   return await (
