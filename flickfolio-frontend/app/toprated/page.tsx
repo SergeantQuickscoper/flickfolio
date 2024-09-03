@@ -16,7 +16,7 @@ export default async function TopRated(){
                 
                 {moviesData.map((i:any) => {
                     console.log(i)
-                    return(<MovieCard key={i.id} name={i.name} rating={i.rating} poster={i.poster} date={i.date}/>)
+                    return(<MovieCard key={i.index} name={i.name} rating={i.rating} poster={i.poster} date={i.date} id={i.id}/>)
                 })}
                 
 
