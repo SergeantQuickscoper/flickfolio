@@ -8,9 +8,9 @@ const Footer = () => {
           <div>
               <h1 className="text-xl text-white font-bold">A website by Don Chacko</h1>
               <div className="flex flex-row mt-2">
-                <Link href="https://www.instagram.com/don.chacko/"><img src="Instagram.svg"/></Link>
-                <Link href="https://github.com/SergeantQuickscoper"><img src="GitHub.svg" className="px-4"/></Link>  
-                <Link href="https://www.linkedin.com/in/don-chacko-631703277/"><img src="Linkedin.svg"/></Link> 
+                <Link href="https://www.instagram.com/don.chacko/"><img src="/Instagram.svg"/></Link>
+                <Link href="https://github.com/SergeantQuickscoper"><img src="/GitHub.svg" className="px-4"/></Link>  
+                <Link href="https://www.linkedin.com/in/don-chacko-631703277/"><img src="/Linkedin.svg"/></Link> 
               </div>
 
           </div>
