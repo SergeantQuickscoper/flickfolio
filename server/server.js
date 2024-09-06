@@ -27,12 +27,11 @@ app.get("/images/nowplaying", async(req, res) => {
         console.log("Request recieved on /images/nowplaying")
     })
     .catch(err => console.error('error:' + err));
-    await console.log(homeImageUrls)
     await res.send(homeImageUrls)
     })
 
 app.get("/toprated", (req, res) => {
-
+    console.log("Request recieved on /toprated")
     const url = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
     const options = {
     method: 'GET',
@@ -53,6 +52,22 @@ app.get("/toprated", (req, res) => {
             moviesData.push(movie);
         }
         res.send(moviesData);
+    })
+    .catch(err => console.error('error:' + err));
+})
+
+app.get("/movies/:id", (req, res) => {
+    const url = 'https://api.themoviedb.org/3/movie/' + req.params.id + '?language=en-US';
+    const options = {
+    method: 'GET',
+    headers: {accept: 'application/json', Authorization: 'Bearer ' + process.env.TMDB_API_READ_ACCESS_TOKEN}
+    };
+
+    fetch(url, options)
+    .then(data => data.json())
+    .then((json) => {
+        console.log(json)
+        res.send(json)
     })
     .catch(err => console.error('error:' + err));
 })

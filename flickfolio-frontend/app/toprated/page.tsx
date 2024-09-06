@@ -7,7 +7,6 @@ export default async function TopRated(){
     await fetch('http://localhost:8080/toprated', { cache: 'no-store' })
     .then((res) => res.json())
     .then((data) => moviesData = data)
-    await console.log(moviesData)
     return await(
         <main>
             <HeaderSearch />
@@ -15,7 +14,6 @@ export default async function TopRated(){
             <section className="h-fit bg-primaryBackground pb-5">
                 
                 {moviesData.map((i:any) => {
-                    console.log(i)
                     return(<MovieCard key={i.index} name={i.name} rating={i.rating} poster={i.poster} date={i.date} id={i.id}/>)
                 })}
                 

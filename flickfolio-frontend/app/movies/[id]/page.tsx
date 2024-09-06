@@ -1,7 +1,17 @@
-const MoviePage = ({ params }:any) => {
+import HeaderSearch from "@/components/HeaderSearch";
+import Footer from "@/components/Footer";
+
+// TODO fix Weird as hell SVG issue, images keep dissapearing
+const MoviePage = async({ params }:any) => {
+
     return(
-        <main className="bg-primaryBackground h-screen">
-            <h1 className=" text-white">Movie Info {params.id}</h1>
+        <main className="bg-primaryBackground">
+            <HeaderSearch />
+            <div className="">
+                 
+            </div>
+
+            <Footer />
         </main>
     )
 }
