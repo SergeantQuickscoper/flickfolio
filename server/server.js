@@ -66,9 +66,35 @@ app.get("/movies/:id", (req, res) => {
     fetch(url, options)
     .then(data => data.json())
     .then((json) => {
-        console.log(json)
         res.send(json)
     })
     .catch(err => console.error('error:' + err));
 })
+
+app.get("/movies/:id/similar", (req, res) => {
+    const url = 'https://api.themoviedb.org/3/movie/' + req.params.id + '/similar?language=en-US&page=1';
+    console.log(url)
+    const options = {
+    method: 'GET',
+    headers: {accept: 'application/json', Authorization: 'Bearer ' + process.env.TMDB_API_READ_ACCESS_TOKEN}
+    };
+
+    fetch(url, options)
+    .then(res => res.json())
+    .then(json => {
+        let moviesData = [];
+        for(i of json.results){
+            let movie = {};
+            movie.id = i.id;
+            movie.name = i.title;
+            movie.date = i.release_date;
+            movie.poster = tmdbImageURL + i.poster_path;
+            movie.rating = i.vote_average;
+            moviesData.push(movie);
+        }
+        res.send(moviesData);
+
+    })
+    .catch(err => console.error('error:' + err));
+    })
 app.listen("8080", () => console.log("Server is live on PORT " + PORT));

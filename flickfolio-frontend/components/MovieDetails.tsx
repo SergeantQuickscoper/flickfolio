@@ -2,18 +2,18 @@ import { Button } from "./ui/button";
 const MovieDetails = (props: any) => {
     return(
         <div className="text-white">
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-center mt-10 mb-36">
                 <div>
-                    <img src="/Poster.png "/>
+                    <img src={props.posterLink} className="h-[542px] rounded-sm"/>
                 </div>
                 <div className="flex flex-col w-7/12 pl-24 align-middle min-h-full justify-evenly">
                     <h1 className=" font-black text-5xl">
-                        The Shawshank Redemption
+                        {props.title}
                     </h1>
                     <p className="w-4/5 font-light">
-                    Imprisoned in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.
+                        {props.overview}
                     </p>
-                    <Button><p>Add to List</p></Button>
+                    <Button className= "mt-6 bg-secondaryBackground rounded-full px-10 py-8 w-1/5 "><p className="text-lg">Add to List</p></Button>
                 </div>
             </div>
         </div>

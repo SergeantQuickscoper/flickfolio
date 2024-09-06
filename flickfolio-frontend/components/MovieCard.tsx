@@ -4,9 +4,9 @@ import Link from "next/link";
 const MovieCard = (props:any) => {
     return(
         <section className="inline-block text-white w-fit mx-10 py-4 max-w-[234px] h-fit">
-            <Link href={"movies/" + props.id}>
+            <Link href={"/movies/" + props.id}>
             <div className="pb-3">
-                <img src= {props.poster}/>
+                <img src= {props.poster} className="rounded-md"/>
             </div>
             </Link>   
             

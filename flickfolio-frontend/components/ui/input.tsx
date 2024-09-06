@@ -21,7 +21,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       />
       <button>
         
-        <img src="SearchIcon.svg"></img>
+        <img src="/SearchIcon.svg"></img>
       </button>
       
       </div>
