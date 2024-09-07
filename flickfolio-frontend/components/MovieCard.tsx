@@ -20,7 +20,7 @@ const MovieCard = (props:any) => {
                 </div>
             </div>
             
-            <Link href={"movies/" + props.id}>
+            <Link href={"/movies/" + props.id}>
             <div className="h-[54px]">
                 <h1 className="text-lg font-bold h-full">{props.name}</h1>
             </div>
