@@ -82,8 +82,13 @@ app.get("/movies/:id/similar", (req, res) => {
     fetch(url, options)
     .then(res => res.json())
     .then(json => {
+        //TODO filter movies without ratings or images. 
         let moviesData = [];
         for(i of json.results){
+            if(i.poster_path == undefined || i.title == undefined){
+                continue;
+            }
+            console.log(i)
             let movie = {};
             movie.id = i.id;
             movie.name = i.title;
