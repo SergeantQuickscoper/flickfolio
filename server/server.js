@@ -85,10 +85,9 @@ app.get("/movies/:id/similar", (req, res) => {
         //TODO filter movies without ratings or images. 
         let moviesData = [];
         for(i of json.results){
-            if(i.poster_path == undefined || i.title == undefined){
+            if(i.poster_path == undefined || i.title == undefined || i.vote_average == 0){
                 continue;
             }
-            console.log(i)
             let movie = {};
             movie.id = i.id;
             movie.name = i.title;
