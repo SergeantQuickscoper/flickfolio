@@ -10,7 +10,7 @@ export function EmblaCarousel(props:any) {
     <div className="embla" ref={emblaRef}>
       <div className="embla__container min-h-screen">
         {props.imgArray.map((i:any) => {
-          return <img src={i} className='embla__slide object-cover' key={i.index}/>
+          return <img src={i} className='embla__slide object-cover brightness-[0.25]' key={i.index}/>
         })}
       </div>
     </div>

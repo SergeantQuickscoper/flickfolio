@@ -72,7 +72,7 @@ app.get("/movies/:id", (req, res) => {
 })
 
 app.get("/movies/:id/similar", (req, res) => {
-    const url = 'https://api.themoviedb.org/3/movie/' + req.params.id + '/similar?language=en-US&page=1';
+    const url = 'https://api.themoviedb.org/3/movie/' + req.params.id + '/recommendations';
     console.log(url)
     const options = {
     method: 'GET',
