@@ -100,5 +100,30 @@ app.get("/movies/:id/similar", (req, res) => {
 
     })
     .catch(err => console.error('error:' + err));
+})
+
+app.get("/movies/search/:query", (req, res) => {
+    const url = 'https://api.themoviedb.org/3/search/movie?query=' + req.params.query + '&include_adult=true&page=1';
+    const options = {method: 'GET', headers: {accept: 'application/json', Authorization: 'Bearer ' + process.env.TMDB_API_READ_ACCESS_TOKEN}};
+
+    fetch(url, options)
+    .then(data => data.json())
+    .then(json => {
+        let moviesData = [];
+        for(i of json.results){
+            if(i.poster_path == undefined || i.title == undefined || i.vote_average == 0){
+                continue;
+            }
+            let movie = {};
+            movie.id = i.id;
+            movie.name = i.title;
+            movie.date = i.release_date;
+            movie.poster = tmdbImageURL + i.poster_path;
+            movie.rating = i.vote_average;
+            moviesData.push(movie);
+        }
+        res.send(moviesData);
     })
+    .catch(err => console.error('error:' + err));
+})
 app.listen("8080", () => console.log("Server is live on PORT " + PORT));
