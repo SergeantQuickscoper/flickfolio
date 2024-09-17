@@ -1,6 +1,7 @@
 import { Input } from "./ui/input";
 import Logo from "./Logo";
 import Link from "next/link";
+import InputWrapper from "./InputWrapper";
 const HeaderSearch = () => {
     return(
         <header className="flex flex-row bg-primaryBackground align-middle pb-8">
@@ -12,7 +13,7 @@ const HeaderSearch = () => {
             </div>
             
             <div className="align-middle ml-28 mt-5 w-3/5 pt-6">
-                <Input className="align-middle rounded-full" />
+                <InputWrapper />
             </div>
             
             <div className="flex flex-row text-white justify-evenly align-middle mt-5 w-1/2 ml-28 pt-[36px]">
