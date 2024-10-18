@@ -1,10 +1,12 @@
-import Link from "next/link";
+'use client'
 
+import {motion} from "framer-motion"
+import Link from "next/link";
 
 const Footer = () => {
     return(
         <footer className="h-96 bg-secondaryBackground relative z-100 ">
-        <div className="flex flex-row justify-center h-full w-full pt-16">
+        <motion.div initial={{opacity: 0}} whileInView={{opacity:1}} transition={{ duration: 0.5 }} viewport={{once: true}} className="flex flex-row justify-center h-full w-full pt-16">
           <div>
               <h1 className="text-xl text-white font-bold">A website by Don Chacko</h1>
               <div className="flex flex-row mt-2">
@@ -38,7 +40,7 @@ const Footer = () => {
                   <h2 className="py-4">Movie Search</h2>
               </div>
           </div>
-        </div>
+        </motion.div>
       </footer>
     )
 }
