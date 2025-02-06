@@ -25,7 +25,7 @@ export default async function Home() {
         <div className="z-100 relative max-h-full h-full flex flex-col">
           <div className="flex flex-row justify-between">
             <Logo/>
-            <Button className=" bg-secondaryBackground rounded-full px-8 py-7 mt-9 mr-8"><Link href="/toprated"> <p className="text-2xl">Login</p></Link></Button>
+            <Button className=" bg-secondaryBackground rounded-full px-8 py-7 mt-9 mr-8"><Link href="/login"> <p className="text-2xl">Login</p></Link></Button>
           </div>
           <div className="text-white flex items-center h-full mt relative">
             <div className="absolute flex flex-col items-center top-1/4 left-0 right-0">
