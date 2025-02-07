@@ -11,11 +11,13 @@ export default async function TopRated(){
         <main>
             <HeaderSearch />
 
-            <section className="h-fit bg-primaryBackground pb-5">
+            <section className="h-fit bg-primaryBackground pb-5 flex flex-row justify-center">
+                <div className="max-w-fit p-0">
+                    {moviesData.map((i:any) => {
+                        return(<MovieCard key={i.index} name={i.name} rating={i.rating} poster={i.poster} date={i.date} id={i.id}/>)
+                    })}
+                </div>
                 
-                {moviesData.map((i:any) => {
-                    return(<MovieCard key={i.index} name={i.name} rating={i.rating} poster={i.poster} date={i.date} id={i.id}/>)
-                })}
                 
 
             </section>

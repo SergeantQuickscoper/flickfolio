@@ -31,9 +31,7 @@ export default async function Home() {
             <div className="absolute flex flex-col items-center top-1/4 left-0 right-0">
                 <h1 className="text-6xl font-bold">Your Movie Lists, Your Way.</h1>
                 <h2 className="text-xl font-extralight mt-5">Curate Your Perfect Movie Lists, Share Your Favorites, and Discover New Must-Sees</h2>
-
                     <Button className="mt-36 bg-secondaryBackground rounded-full px-10 py-9"><Link href="/toprated"> <p className="text-2xl">Get Started</p></Link></Button>
-
             </div>
         </div>
       </div>
